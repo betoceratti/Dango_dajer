@@ -1,0 +1,99 @@
+{% extends 'plantilla.htm' %}
+{% load static %}
+
+{% block head %}
+<img src="{{user.profile.img.url}}" class="user_pic">
+{{user}}
+<a href="{% url 'perfil' %}" class="link_perfil">Mi Perfil</a>
+<p class="show" id="show"><i class="fas fa-bars"></i></p>
+
+
+<nav class="nav">
+    <li><a href="{% url 'data' %}"><i class="fas fa-plus-square"></i><span>Kpis</span></a> </li>
+    <li><a href="{% url 'salir' %}"><i class="fas fa-plus-square"></i><span>logOut</span></a> </li>
+    
+</nav>
+
+
+
+{% endblock%}
+
+
+
+{% block content %}
+
+
+
+<div class="buscador">
+    <form method="GET">
+        {% csrf_token%}
+        <input type="text" placeholder="Palabra clave" name="buscar" value="{{request.GET.buscar}}">
+        <button type="submit">Buscar..</button>
+        <a href=" {% url 'articulos' %} ">Limpiar </a>
+        </form>
+       
+</div>
+
+<div class="publicaciones">
+    <form action="{% url 'subir_post' %}" method="POST" enctype="multipart/form-data" class="form_blog">
+        {% csrf_token %}
+       
+        {{formulario}}
+        <!--<label for="titulo">Nombre</label>
+        <input type="text" name="titulo" placeholder="Captura el nombre de es dispositivo" required>
+        <label for="contenido">descripcion</label>
+        <input type="text" name="contenido" placeholder="Captura la descrpcion de el dispositivo" required>
+        <label for="imagen">Sube una imagen</label>
+        <input type="file" name="imagen">
+        
+        
+        <label for="publicado">publicado</label>
+        <select name="publicado" id="publicado">
+            <option value="1">si</option>
+            <option value="0">no</option>
+        </select>-->
+        
+        <button type="submit" class="btn_enviar">Publicar</button>
+        {{mensaje}}
+        
+       
+    </form>
+
+    
+    {% if articulos %}
+    
+    {% for articulo  in articulos %}
+    <div class="publicacion">
+        <div class="articulo_img">
+            {% if articulo.imagen %}
+            <img src="{{articulo.imagen.url}}">
+            {%endif%}
+           
+        </div>              
+           
+      
+        <div class="articulo_contenido">
+            <h2>{{articulo.titulo}}</h2>
+            <h4 class="contenido">{{articulo.contenido}}</h4>
+            <a href="{% url 'detalle' id=articulo.id %}">Ver mas..</a>
+            {% if user.username == 'Rceratti' %}
+            <a href="{% url 'elim_articulo' id=articulo.id %}" class="botones">Eliminar</a>
+            {% endif %}
+            <p>{{articulo.createdo_el}}</p>
+           
+           
+            <p> {{articulo.user}}</p>
+        </div>
+      
+       
+    </div>
+{% endfor%}
+{% else %}
+<div class="mensaje">
+    <h1>No hay articulos</h1>
+</div>
+
+{% endif %}
+</div>
+
+{% endblock%}

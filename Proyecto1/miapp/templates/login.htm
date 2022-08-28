@@ -1,0 +1,26 @@
+{% extends 'plantilla.htm' %}
+<!-- {% load static %} -->
+{% block content %}
+
+
+<form action="{% url 'login_page' %} " method="POST">
+    {% csrf_token %}
+    <label for="usuario">Usuario</label>
+    <input type="text" name="username" placeholder="Captura tu usuario" required>
+    <label for="password">Password</label>
+    <input type="password" name="password" placeholder="Captura tu password" required>
+
+    <button type="submit" class="btn_enviar" value="Enviar">Enter</button>
+
+    <div class="logo-form">
+        <img src="{% static 'imagess/Logo_Dajer.jpg' %}" alt="">
+    </div>
+    <div class="mensaje">
+        {{mensaje}}
+    </div>
+    <a href="{% url 'registro' %}">Registrate</a>
+</form>
+<!-- <img src="{% static 'imagess/LOGO.PNG' %}" alt=""> -->
+
+<!-- <h3>{{titulo}}</h3><span>{{mensaje}}</span>  -->
+{% endblock %}

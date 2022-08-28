@@ -1,0 +1,64 @@
+{% extends 'plantilla.htm' %}
+{% load static %}
+
+{% block head %}
+<img src="{{user.profile.img.url}}" class="user_pic">
+
+<li><a href="{% url 'articulos' %}"><i class="fas fa-plus-square"></i><span>Blog</span></a> </li>
+<li><a href="{% url 'feed' %}"><i class="fas fa-plus-square"></i><span>Team</span></a> </li>
+
+
+<div class="close">
+    <li>  <a href="{% url 'salir' %}"><i class="fas fa-window-close"></i><span>Logout</span></a></li>
+    
+</div>
+
+
+
+{% endblock%}
+
+{% block content %}
+
+<div class="mi_perfil">
+   
+
+    <div class="perfil_textos">
+        <img src="{{user.profile.img.url}}" class="user_pic">
+        <h4>@ {{user.username}}</h4>
+       <h5><i class="fas fa-envelope-open-text"></i> {{user.email}}</h5>
+       <h4><i class="fas fa-chalkboard-teacher"></i> {{user.profile.position}}</h4>
+       <h6>Id: {{user.profile.id}}</h6>
+      <p>{{posts.count}} Publicaciones</p>
+    </div>
+    <div class="perfil_form">
+        <form action="{% url 'mi_perfil' id=user.id %}" method="POST" enctype="multipart/form-data" class="form_perfil">
+            {% csrf_token %}
+           
+            {{form.as_p}}
+           
+            
+            <button type="submit" class="btn_enviar btn_perfil">Cambiar</button>
+            {{mensaje}}
+            
+           
+        </form>
+      
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+<!-- {% if messages %}
+{% for message in messages %}
+<div class="notification {{message.tags}}">
+	{{message}}
+
+</div>
+
+{% endfor %}
+{%endif%}
+
+
+-->

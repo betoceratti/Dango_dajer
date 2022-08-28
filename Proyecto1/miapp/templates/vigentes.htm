@@ -1,0 +1,122 @@
+{%extends 'plantilla.htm'%}
+<link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+
+{%block head %}
+<!--aqui se inserta lode las plantillas para heredra contenidopor defecto qye tengamos aqui se usa doble llave alla en la template -->
+{% load static %}
+
+
+<div class="logo">
+    <img src="{% static 'imagess/Logo_Dajer.jpg' %}" alt="">
+    
+</div>
+
+<nav class="nav">
+   
+    <ul>
+        <li>  <a href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span> </a>   
+        </li>
+        <li> <a href="{% url 'data' %}"><i class="fas fa-chart-line"></i><span>Kpis</span></a></li>
+        <li><a href="{% url 'reportes' %}"><i class="fas fa-tachometer-alt"></i><span>Edos Fin</span></a> </li>
+        <li> <a href="{% url 'articulos' %}"><i class="fas fa-plus-square"></i><span>Social</span></a></li>   
+
+    </ul>       
+    
+    <div class="close">
+        <li>  <a href="{% url 'salir' %}"><i class="fas fa-window-close"></i><span>Logout</span></a></li>
+        
+    </div>
+       
+    
+</nav>
+
+
+{%endblock%}
+
+
+
+{% block content %}
+<!-- <div class="tabla"> -->
+    <div class="saldo">
+        <p>${{total}}</p>       
+    </div>
+    <div class="saldo casos">
+        <p>{{casos}}</p>
+    </div>
+   
+  <h1>Listado Casos Vigentes</h1>
+
+        <table class="table table-border cell-border" data-role="table" >
+            <thead>
+            <tr>
+                
+                <th>Nombre</th>        
+                <th>Tel Celular</th>
+                <th>Pago</th>
+                <th data-cls-column="bg-red fg-white text-left">Saldo Vencido</th>
+                <th>Pagos Vencidos</th>
+                <th>Vence el :</th>
+                <th data-cls-column="bg-green fg-white text-left">Saldo Vigente</th>
+            </tr>
+            </thead>
+<!-- para ver todos los clientes insertar todos en el for -->
+            <tbody>
+                {% for r in vigentes %}
+                   <tr>
+                       <td> {{r.0}}</td>
+                       <td> {{r.1}}</td>
+                       <td>$ {{r.2}}</td>
+                       <td>$ {{r.3}}</td>
+                       <td> {{r.4}}</td>
+                       <td> {{r.6}}</td>
+                       <td> ${{r.5}}</td>
+                       
+                   </tr>      
+               
+               {% endfor %} 
+               
+                    </tbody>
+                  
+                  </table>
+                
+   
+                <!-- </div> -->
+
+
+<section class="todos">
+    <table class="table table-border cell-border" data-role="table" >
+        <thead>
+        <tr>
+            
+            <th>Nombre</th>        
+            <th>Tel Celular</th>
+            <th>Pago</th>
+            <th data-cls-column="bg-red fg-white text-left">Saldo Vencido</th>
+            <th>Pagos Vencidos</th>
+            <th>Vence el :</th>
+            <th data-cls-column="bg-green fg-white text-left">Saldo Vigente</th>
+        </tr>
+        </thead>
+<!-- para ver todos los clientes insertar todos en el for -->
+        <tbody>
+            {% for r in todos %}
+               <tr>
+                   <td> {{r.0}}</td>
+                   <td> {{r.1}}</td>
+                   <td>$ {{r.2}}</td>
+                   <td>$ {{r.3}}</td>
+                   <td> {{r.4}}</td>
+                   <td> {{r.6}}</td>
+                   <td> ${{r.5}}</td>
+                   
+               </tr>      
+           
+           {% endfor %} 
+           
+                </tbody>
+              
+              </table>
+            
+</section>                
+{% endblock %}
+

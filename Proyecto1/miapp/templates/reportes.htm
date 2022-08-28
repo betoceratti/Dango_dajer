@@ -1,0 +1,64 @@
+{% extends 'plantilla.htm' %}
+
+{% block head %}
+{% load static %}
+
+
+<div class="logo">
+    <img src="{% static 'imagess/Logo_Dajer.jpg' %}" alt="">
+    
+</div>
+
+<nav class="nav">
+   
+    <ul>
+        <li>  <a href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span> </a>   
+        </li>
+        <li> <a href="{% url 'data' %}"><i class="fas fa-chart-line"></i><span>Kpis</span></a></li>
+        <li><a href="{% url 'lista' %}"><i class="fas fa-list-alt"></i><span>Vigentes</span></a> </li>
+       
+
+    </ul>       
+    
+    <div class="close">
+        <li>  <a href="{% url 'salir' %}"><i class="fas fa-window-close"></i><span>Logout</span></a></li>
+        
+    </div>
+       
+    
+</nav>
+
+{% endblock%}
+
+{% block content %}
+
+<div class="reporte-pdf">
+
+    <h1>{{mensaje}}</h1>
+
+<div class="pdfs">
+    <div class="pdf">
+        <a target="_blank" href="../static/documentos/2019.pdf"><img src="../static/imagess/reporte.png"></a>
+        <p>2019</p>
+    </div>
+   
+   <div class="pdf">
+    <a target="_blank" href="../static/documentos/2020.pdf"><img src="../static/imagess/reporte.png"></a>
+    <p>2020</p>
+    
+   </div> 
+
+   <div class="pdf">
+    <a target="_blank" href="../static/documentos/2020.pdf"><img src="../static/imagess/reporte.png"></a>
+    <p>2021</p>
+    
+   </div> 
+   
+</div>    
+
+
+
+
+</div>
+
+{% endblock %}

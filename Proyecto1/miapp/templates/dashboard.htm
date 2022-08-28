@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAJER</title>
+    {% load static %}
+    <script src="https://kit.fontawesome.com/a2e8d0339c.js"></script>
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    <link rel="stylesheet" href="{% static 'csss/estilos.css'%}" type="text/css">    
+    <link rel="short icon" href="{% static 'imagess/Logo_Dajer.jpg'%}" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+
+    <div class="logo">
+        <img src="{% static 'imagess/Logo_Dajer.jpg' %}" alt="">
+    </div>
+    
+    <nav class="nav">
+        <ul>
+           
+            <li> <a href="{% url 'data' %}"><i class="fas fa-chart-line"></i><span>Kpis</span></a></li>
+            <li><a href="{% url 'lista' %}"><i class="fas fa-list-alt"></i><span>Vigentes</span></a> </li>
+            <li><a href="{% url 'reportes' %}"><i class="fas fa-tachometer-alt"></i><span>Edos Fin</span></a> </li>
+           
+            <li><a href="{% url 'articulos' %}"><i class="fas fa-plus-square"></i><span>Social</span></a> </li>
+           
+            
+
+        </ul>                    
+    </nav>   
+
+    <div class="close">
+        <li>  <a href="{% url 'salir' %}"><i class="fas fa-window-close"></i><span>Logout</span></a></li>
+        
+    </div>
+
+
+</header>
+
+
+<!-- COMIENZA EL DASHBOARD -->
+<div class="titulo">
+    <h2>CERATTI SYSTEM</h2>
+    <div class="iconos">
+        <a href="#" id="print" onclick="window.print()"><i class="fas fa-search"></i></a>
+        <a href="#"><i class="fas fa-users"></i></a>
+    </div>
+</div>
+
+<div class="contenedor">
+
+    <!-- PRIMERA SECCION -->
+    <div class="item cero">
+      {{indicadores.11.0}}        
+       
+        <p>Colocacion</p>
+         <!-- <i class="fas fa-hand-holding-usd"></i> -->
+
+    </div>
+
+    
+    <div class="item dos" id="ingresos" data-indicador="{{indicadores.4.1}}">
+       {{indicadores.10.1}}
+       
+        <!-- <i class="fas fa-plus"></i> -->
+        <p>Ingresos</p>
+        
+    </div>
+    <div class="item tres" id="gastos" data-indicador="{{indicadores.4.2}}">
+        {{indicadores.10.2}}
+        <p>Gasto</p>
+    </div>
+    <div class="item cuatro" id="utilidad" data-indicador="{{indicadores.4.3}}">
+       $ {{indicadores.10.3}}
+        <p>Utilidad</p>
+    </div>
+
+    <div class="item reporte" id="chartContainer">
+        <!-- <img src="../static/imagess/Gestion Operativa 2019-2021.png" alt=""> -->
+    </div>
+
+
+  <div class="item grafica">
+      <div class="developer"><img src="{{user.profile.img.url}}" alt=""></div>
+      <div class="puesto">
+          <ul>
+              <li>
+                  <h5>{{user}}</h5>
+              </li>
+            <li>
+                <p>CTO</p>
+            </li>
+
+            <li>
+                
+                <p>{{user.email}}</p><span><i class="fas fa-at"></i></span>
+                
+            </li>
+          </ul>
+      </div>
+
+  </div>
+
+</div><!--termina el contenedor-->
+
+<div class="contenedor2">
+    <table class="table table-border cell-border " >
+        <thead>
+        <tr>
+            
+            <th>Año</th>        
+            <th>INGRESO</th>
+            <th>GASTOS</th>
+            <th data-cls-column="bg-red fg-white text-left">UTILIDAD</th>
+            
+        </tr>
+        </thead>
+
+        <tbody>
+           
+               <tr>
+                   <td> 2019</td>
+                   <td> {{indicadores.6.1}}</td>
+                   <td> {{indicadores.6.2}}</td>
+                   <td class="blue">{{indicadores.6.3}}</td>
+                   
+               </tr>      
+           
+               <tr>
+                <td> 2020</td>
+                <td> {{indicadores.7.1}}</td>
+                <td> {{indicadores.7.2}}</td>
+                <td class="red"> {{indicadores.7.3}}</td>
+                
+            </tr>      
+
+            <tr>
+                <td> 2021</td>
+                <td> {{indicadores.8.1}}</td>
+                <td> {{indicadores.8.2}}</td>
+                <td class="red"> {{indicadores.8.3}}</td>
+                
+            </tr>      
+
+             <tr>
+                <td> 2022</td>
+                <td> {{indicadores.9.1}}</td>
+                <td> {{indicadores.9.2}}</td>
+                <td class="red"> {{indicadores.9.3}}</td>
+                
+            </tr>       
+            <tr>
+                <td> Totales</td>
+                <td> {{indicadores.10.1}}</td>
+                <td> {{indicadores.10.2}}</td>
+                <td class="orange"> {{indicadores.10.3}}</td>
+                
+            </tr>      
+        
+           
+           
+                </tbody>
+              </table>
+              <!-- tabla resultado mes en curso -->
+              <table class="table table-border cell-border " >
+                <thead>
+                <tr>
+                    
+                    <th>Mes</th> 
+                    <th>Colocacion</th>        
+                    <th>Ingresos</th>
+                    <th>Gastos</th>
+                    <th data-cls-column="bg-red fg-white text-left">Utilidad</th>
+                    
+                </tr>
+                </thead>
+        
+                <tbody>
+                   
+                       <tr>
+                           <td>JUNIO</td>
+                           <td> {{mesactual.4.0}}</td>
+                           <td> {{mesactual.11.0}}</td>
+                           <td> {{mesactual.12.0}}</td>
+                           <td class="red">{{mesactual.13.0}}</td>
+                           
+                       </tr>                      
+                            
+                   
+                   
+                        </tbody>
+                      </table>
+                               
+              
+
+            
+</div>
+
+<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    
+</body>
+
+
+<script>
+    window.onload = function () {
+
+    let ing = document.getElementById('ingresos').dataset.indicador;
+    let num = parseInt(ing)  
+    
+    let gas = document.getElementById('gastos').dataset.indicador;
+    let num2 = parseInt(gas)    
+
+    let uti = document.getElementById('utilidad').dataset.indicador;
+    let num3 = parseInt(uti)    
+    //alert(typeof(num));
+    
+    
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        theme: "light2", // "light1", "light2", "dark1", "dark2"
+        title:{
+            text: "2019-2022"
+        },
+        axisY: {
+            title: "Gestion Historico"
+        },
+        data: [{        
+            type: "column",  
+            showInLegend: true, 
+            legendMarkerColor: "blue",
+            legendText: "DAJER",
+            dataPoints: [      
+                { y: num, label: "Ingresos" },
+                { y: num2,  label: "Gastos" },
+                { y: num3,  label: "Utilidad" }
+                
+            ]
+        }]
+    });
+    chart.render();
+    
+    }
+  
+
+</script>
+
+   
+
+</html>
+
+

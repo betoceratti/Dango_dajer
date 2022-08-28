@@ -1,0 +1,61 @@
+{% extends 'plantilla.htm' %}
+
+
+
+{% block head%}
+<img src="{{user.profile.img.url}}" alt="" class="user_pic">
+<p class="show" id="display"><i class="fas fa-bars"></i></p>
+{% endblock %}
+
+{% block content %}
+<form action="{% url 'actualizar' %}" method="POST" class="form_update">
+    {% csrf_token %}
+    <label for="id">Id</label>
+    <input type="number" name="id" placeholder="{{articulo.id}}" required value="{{articulo.id}}">
+    <label for="titulo">Titulo</label>
+    <input type="text" name="titulo" placeholder="{{articulo.titulo}}" required>
+   
+    <label for="contenido">contenido</label>
+    <textarea  name="contenido" placeholder="{{articulo.contenido}}" required cols="50" rows="4"></textarea>></textarea> 
+
+ <button type="submit" class="btn_enviar">Acualizar</button>
+  
+
+</form> 
+
+
+
+<div class="tarjeta">
+    <div class="capa">
+    {% if articulo.imagen %}
+<img src="{{articulo.imagen.url}}" alt="">
+{% endif%}
+</div>
+
+<div class="capa">
+    <div class="textos">
+        <h4>  {{articulo.titulo}}</h4>
+    <h2> {{articulo.contenido}}</h2>
+    <a href="{% url 'articulos' %}" class="x">x</a>
+    </div>
+    
+  
+   
+</div>
+</div>
+
+
+<script>
+
+const boton= document.getElementById("display");
+   
+boton.addEventListener('click',()=>{
+    // alert("funciona");
+    document.querySelector('.form_update').classList.toggle('activo');
+    });
+
+
+</script>
+
+{% endblock %}
+

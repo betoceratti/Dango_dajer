@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODEMEX.COM</title>
+    {% load static %}
+    <script src="https://kit.fontawesome.com/a2e8d0339c.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    <link rel="stylesheet" href="{% static 'csss/estilos.css'%}" type="text/css">    
+    <link rel="short icon" href="{% static 'imagess/Logo_Dajer.jpg'%}" type="image/x-icon">
+   
+</head>
+
+<body>
+    <header>
+       
+        {% block head  %}
+      
+
+
+        {%endblock%}
+    </header>
+
+
+
+
+    <div class="content" id="content">
+        {%block content%}
+        <!--aqui se inserta lode las plantillas para heredra contenidopor defecto qye tengamos aqui se usa doble llave alla en la template -->
+        <!-- <img src="{% static 'imagess/LOGO.PNG' %}" alt=""> -->
+        {%endblock%}
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+    <script src="{% static 'JS/dajer.js' %}"></script> 
+</body>
+  
+
+
+
+</html>
+
+

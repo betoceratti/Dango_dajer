@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAJER SITE</title>
+    {% load static %}
+    <script src="https://kit.fontawesome.com/a2e8d0339c.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css"> -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Krona+One&family=Goldman:wght@400;700&family=Inconsolata:wght@300&family=Montserrat:ital,wght@1,300&family=Orbitron:wght@500&family=Rubik:ital,wght@1,300&family=Space+Mono:ital@1&family=Teko:wght@500&family=Turret+Road:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Oswald&display=swap" rel="stylesheet">	
+   
+    <link rel="stylesheet" href="{% static 'csss/styleblog.css'%}" type="text/css">    
+    <link rel="short icon" href="{% static 'imagess/Logo_Dajer.jpg'%}" type="image/x-icon">
+</head>
+<body>
+    <a href="#header" class="flecha-up"><i class="fas fa-chevron-circle-up"></i></a>
+<!-- NAVEGADOR FIJO CON OCULTAMIENTO -->
+<nav class="nav" id="nav">
+    <div class="logo">
+        <img src="{% static 'imagess/Logo_Dajer.png' %}" alt="">
+
+    </div>
+                 <ul class="navbar">
+                     <li id="s1"><a href="#header" class="activo">Inicio</a></li>                        
+                     <li id="s2"><a href="#servicios">Productos</a> </li>
+                     <li id="s4"><a href="#nosotros">conocenos</a> </li>
+                     <li id="s4"><a href="#contacto">contacto</a> </li>
+                     <li id="s3"><a href="#">Admin</a>
+                        <ul>
+                            <li id=""><a  href="{% url 'acceso' %}">Login</a> </li>
+                            <li id=""><a  href="{% url 'registro' %}">Registro</a> </li>
+                        </ul>      
+                    
+                    </li>                
+                   
+                    
+                    
+                 </ul>  
+        
+                   
+            
+                         
+</nav>
+
+<!-- MENU RESPOSIVE DESPLEGABLE -->
+<div class="menu" id="menu">
+    <p class="click-menu" id="btn">
+        <i class="fas fa-plus"></i>
+
+     </p>
+
+     <p class="click-menu1" id="btn1">
+         <i class="fas fa-plus"></i>
+
+      </p>
+ </div>
+
+ <!-- MENU FIJO VERTICAL  -->
+ <div class="social-menu">
+    <div class="zise" id="scroll">
+        <p></p>
+    </div>
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>            
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>    
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>       
+                
+            </ul>
+         </div>
+
+ <!-- Portada hero -->
+ <header class="hero " id="header">
+    <div class="portada">
+        <div class="side text-center ">
+         <h2 class="titulo-hero ">“Apoyando a las familias chiapanecas.. ” </h2>
+            <h1 class="titulo-hero"> <span class="typed"></span></h1>
+        
+        </div>  
+        <!-- <a class="boton-portada" href="#" id="btn-portada">--Leer mas</a> -->
+
+       <a href="#tarjetas" class="flecha-abajo"> <i class="fas fa-chevron-down"></i></a>
+        
+        <!-- <div class="side"></div> -->
+
+
+    </div>
+
+    <!-- Loader con js -->
+    <div class="loader" id="loader">
+     <div class="lds-ellipsis big" ><div></div><div></div><div></div><div></div></div>
+    </div>
+  
+
+    <div class="wave" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M3.65,142.92 C-1.43,142.92 189.32,88.92 504.78,-5.07 L505.35,155.91 L5.90,154.91 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+
+ </header>
+
+    <!-- SECCION DE COLUMNAS CON NUMEROS  -->
+    <div class="numbers"> 
+
+        <div class="numero" data-aos="flip-up" data-aos-duration="1000"><span class="contador">9786</span>
+           <p>Clientes</p>
+       </div>
+        <div class="numero" data-aos="flip-down"" data-aos-duration="2000" data-aos-delay="1000"><span class="contador">7856</span>
+           <p>Sonrisas</p>
+       </div>
+        <div class="numero" data-aos="flip-up" data-aos-duration="3000"><span class="contador">6543</span>
+           <p>Emails</p>
+       </div>
+        <div class="numero" data-aos="flip-down" data-aos-duration="3000" data-aos-delay="1000"><span class="contador">3476</span>
+           <p>Coffe team</p>
+       </div>
+    </div>   
+
+  <!-- CUADRO CON SOLO TEXTO CENTRADO -->
+ 
+  <main class="cuadro-texto">
+    <div class="cuadro-text-center">
+        <h3 class="titulo">
+            Nuestro proceso es...
+        </h3>
+         <span class="line green"></span> 
+        <p class="parrafo" id="s5"></p>
+    </div>       
+
+</main>
+
+
+    <!-- SECCION TARJETAS  -->
+    <div class="tarjetas" id="tarjetas">
+  
+
+        <div class="tarjeta"  data-aos="zoom-in-right" data-aos-duration="1000">
+            <div class="tarjeta_img one"></div>
+            <div class="informacion">
+                <h5>Oportuno</h5>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, sed.</p>
+                <a href="" class="boton green">leer ma</a>
+            </div>
+        </div>
+        
+        <div class="tarjeta" data-aos="flip-up" data-aos-duration="1000">
+            <div class="tarjeta_img two"></div>
+            <div class="informacion">
+                <h5>Rapido</h5>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, sed.</p>
+                <a href="" class="boton green">leer ma</a>
+            </div>
+        </div>
+        
+        <div class="tarjeta"  data-aos="zoom-in-left" data-aos-duration="1000">
+            <div class="tarjeta_img tree"></div>
+            <div class="informacion">
+                <h5>Confiable</h5>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, sed.</p>
+                <a href="" class="boton green">leer ma</a>
+            </div>
+        </div>
+        
+        
+        </div>
+
+   <!-- CUADRO DE TEXTO CON BOTON ALTO MEDIO  -->
+  
+    <div class="aviso ">
+        <h2 class="titulo white">el valor de estar...</h2>
+        <!-- <a href="#" class="boton-portada">--See more projects</a> -->
+    </div>
+  
+    
+
+<!-- SECCION DE SKILLS  -->
+<div class="wraper" id="servicios">
+    <div class="skills">
+        <h1 class="subtitulo">Productos Prodemex</h1class=subtitulo>
+    </div>
+   
+    <div class="skills">
+       
+        <div class="skill_details">
+            
+            <details>        
+                      
+                <summary>Credito Personal</summary>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Laboriosam magni provident harum ipsum aut placeat.
+                     Quam obcaecati doloremque temporibus neque,
+                      maxime impedit nihil consequatur aspernatur soluta quia fuga tenetur illum.</p>
+                </details>
+                <span class="icon"><i class="fas fa-check-circle"></i></span>
+        </div>
+           
+    
+           <div class="skill_details">
+            
+           <details>                
+               <summary>Credito Pyme</summary>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                   Laboriosam magni provident harum ipsum aut placeat.
+                    Quam obcaecati doloremque temporibus neque,
+                     maxime impedit nihil consequatur aspernatur soluta quia fuga tenetur illum.</p>
+               </details>
+               <span class="icon"><i class="fas fa-check-circle"></i></span>
+       </div>
+          
+       <div class="skill_details">
+            
+        <details>                
+            <summary>Credito Hipoteca</summary>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Laboriosam magni provident harum ipsum aut placeat.
+                 Quam obcaecati doloremque temporibus neque,
+                  maxime impedit nihil consequatur aspernatur soluta quia fuga tenetur illum.</p>
+            </details>
+            <span class="icon"><i class="fas fa-check-circle"></i></span>
+    </div>
+
+    <div class="skill_details">
+            
+        <details>                
+            <summary>Credito Tu Auto</summary>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Laboriosam magni provident harum ipsum aut placeat.
+                 Quam obcaecati doloremque temporibus neque,
+                  maxime impedit nihil consequatur aspernatur soluta quia fuga tenetur illum.</p>
+            </details>
+            <span class="icon"><i class="fas fa-check-circle"></i></span>
+    </div>
+
+    <div class="skill_details">
+            
+        <details>                
+            <summary>Credito Personal </summary>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Laboriosam magni provident harum ipsum aut placeat.
+                 Quam obcaecati doloremque temporibus neque,
+                  maxime impedit nihil consequatur aspernatur soluta quia fuga tenetur illum.</p>
+            </details>
+            <span class="icon"><i class="fas fa-check-circle"></i></span>
+    </div>
+    
+    </div>
+    
+    
+       </div>
+
+
+  <!-- SEECION CON DOS COULIMNAS TEXTO E IMAGEN -->
+  <!-- 1 -->
+  <div class="text-img" id="nosotros">
+    <div class="col uno">
+        <div class="col-text">
+            <span class="number">01</span>
+            <h2 class="titulo white">¿Quienes somos?</h2>
+            <span class="line white"></span>
+            <p class="parrafo white">
+                Iniciamos operaciones en el 2019. En Dajer queremos que el dinero deje de ser una limitante para que las empresas crezcan.
+
+                Por ello brindamos soluciones financieras productivas, es decir,realizamos préstamos a negocios exclusivamente para ayudarles a producir más.
+                
+                Somos una financiera 100% mexicana con una estructura operativa esbelta y flexible la cual nos permite dar soluciones financieras de forma eficiente y adaptar nuestras políticas crediticias a las necesidades de nuestros clientes, contemplando y respetando el marco legal y la viabilidad económica de cada operación.
+            </p>
+
+        </div>
+       
+    </div>
+    <!--<div class="col">
+        <img src="../static/imagess/flores.jpg" alt="">
+    </div>-->
+</div>
+
+<!-- 2 -->
+<div class="text-img">
+    <div class="col">
+       
+        <img src="../static/imagess/flores.jpg" alt="">
+    </div>
+    <div class="col">
+        <div class="col-text">
+            <span class="number">02</span>
+            <h2 class="subtitulo white">Nuestra Mision</h2>
+            <span class="line white"></span>
+            <p class="parrafo white">
+                Servir de apoyo financiero a todos nuestros clientes para el desarrollo y emprendimiento de sus negocios, a través de la oferta de productos financieros competitivos y de innovación.
+            </p>
+
+        </div>
+      
+    </div>
+</div>
+<!-- 3 -->
+<div class="text-img">
+    <div class="col">
+        <div class="col-text">
+            <span class="number">03</span>
+            <h2 class="subtitulo white">Vision</h2>
+            <span class="line white"></span>
+            <p class="parrafo white">
+                Ser la Micro-financiera preferida de los mexicanos, dedicada a satisfacer sus necesidades financieras con calidez, innovación y competitividad, a través del desarrollo de productos financieros y que estos sean el motor que los impulsen a alcanzar sus sueños; así como promover la cultura e inclusión financiera de nuestros clientes.
+            </p>
+
+        </div>
+       
+    </div>
+    <div class="col">
+        <img src="../static/imagess/text-img (2).jpg" alt="">
+    </div>
+</div>
+
+<!-- SECCION DEL FORMULARIO -->
+<div class="contacto" id="contacto"> 
+            
+    <form class="form">         
+       <div class="menuform" id="menuform">
+           <p class="click-menuform" id="btnform">
+               <!-- <i class="fas fa-plus"></i> -->
+               <i class="fas fa-eye"></i>
+    
+            </p>         
+           
+        </div>
+       
+        <div class="grupo ">
+           <h2 class="titulo-form">Contactanos!</h2>
+        </div>
+      
+       
+           <div class="grupo">
+              
+               <label for="email">Email</label>
+               <input type="email" class="input" id="email">
+          
+           </div>
+
+           <div class="grupo">
+              
+               <label for="mensaje">Tu mensaje..</label>
+               <textarea id="mensaje" cols="40" rows="5"></textarea>
+          
+           </div>
+           
+         
+           <div id="buzon"></div>
+      
+        <button type="button" class="boton_form" onclick="login()">Enviar</button>
+    </form>
+
+
+
+</div>
+
+
+
+       <footer> <!-- PIE DE PAGINA -->
+        <div class="footer" id="footer">
+            <div class="redes">
+                         <a href="#"><i class="fab fa-facebook"></i></a>
+                         <a href="#"><i class="fab fa-twitter"></i></a>
+                         <a href="#"><i class="fab fa-instagram"></i></a>
+                         <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        
+            <div class="text-footer">
+                <h5>Dirección: Av 3a. Nte Pte n 1042, Niño de Atocha, 29034 Tuxtla Gutiérrez, Chis.</h5>
+                <!-- <h5>Tel : 961 618 3974</h5> -->
+                <h5>Email : contacto@dajerprodemex.com</h5>
+                
+            </div>
+        
+            <div class="nav-footer">
+            <a href="#header"><img src="../static/imagess/cnvb.png" alt=""></a>
+            <a href="#servicios"><img src="../static/imagess/3-190x90.png" alt=""></a>
+           
+        </div>
+        
+        
+        <div class="footer-marca" data-aos="fade-up" data-aos-duration="2000">
+            <a href="#header"><img src="{% static 'imagess/ceratti_marca.png'%}" alt=""></a>
+            <p>Diseño web by ROBERTO CERATTI</p>
+        </div>
+        
+        </div>
+            </footer>
+        
+
+<!-- JAVA SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>   
+    <script src="{% static 'JS/frameworkCeratti.js' %}"></script> 
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- <a href="{% url 'acceso' %}">Login</a>
+<a href="{% url 'registro' %}">Registrate</a>
+ -->

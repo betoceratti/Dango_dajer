@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ceratti-python",
+  "private_key_id": "f3a2ff9678c9efa6ab787092bc6536a986e6ea01",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCz6EcolGa3fSb5\n6H5IlN865Sxn6tiUpbox+hgt4wEpH47yJMfonR4lPncpixbxdXvRqkuft34pc/L3\nivXHCjylNvQtYZDZzuluJbW88Wnu85GgOFhNCuDD8QBtaWl05kkXsTKsRp2OyPdI\nJtO/mDP1EIx66NSmSJbLNDs69vRwj9P8LdcjV8s73Bnpwm1bhycNwSSXIxGqL2vw\n/Fyn0BQDsCAc60eisERlBMyTUkXG4bHNvLUle4zTuxDwqE48UiMcbdJzNoUtbDn3\nQw+spHov+Ui0ZwAzOOTgmmgvtkQkpDzg4/mUm/QiV9r7Wb3V5odc+vpF/A5kPwml\niWuIYibpAgMBAAECggEAMlRCw+lwKtjKNJOD8I4lPPary455dGxAgIa0iPG+e2Cm\nvrrnaf26VzT4ZRjSHE5/ixIXAeF1W+diCzpGs537hUSwXpmyyhwGVZgbFXZ76isd\njDL3EOaAJpCfS/x3UgqyW/xobqV6ol06QGcMSccskdxFUIUeKD6aYNKF12MK0woR\nSR9JHU6pIuf8ZbkDA7S0TBdcsrtklf2bBQ6UCQdlxRxgc0GBBtYraJ7MwPrT630M\nHDKLR7qJwOy2gQNINkxnmsJaVEIYMvEBugkbJa12Zyt9vDqSGsIc1PIean4K8M/Q\nCBBXsq/UzI64cWzol7zIL6OvG2TwhrXQl9F1xtNa2QKBgQDiC4NOM4PbNKfd3zIB\nc0EnbhAvFjdq5Zhblw4nnxovQQa1v/FptwZiH0zhx3BbXZFakXwSLHzS9SXXZbS2\nqIu07jvsS81NuYcTXmwrsZX0fMwbb7S6YRmqNg0iLYuudNixoR2gD9HeE9aWf/Uu\nqKNxzcTayF0ncKe97Ci2SXcjnwKBgQDLv5BWNudBonx9Txp6h9kWCZelk8wh2Pk9\nDU50JyFQk5qe5cmUFCr7yTE80aQhVoGGRhLJ+1fm3b0VYdGzUFo+1EXhCPACoTPd\nlU8f3x84ljDERP/RvZ7/XS7Oz4eWSgVzg3Z74a2/iSLHbRqGyjdiWcpRNlotPy6/\n5wlVF3hodwKBgBhbkTyeBHlchTI9WNAbMUwkag4I4NPeBbro3hea52FsKmLvWf5A\nQKnWIZy6tvrBbGZMAwiaTqEU1Y0OYpjENLm8aiyeRnM3qLyHkjRrIHOF9yCFuv3S\ndMeIp4WlTsXvxWHusJiM29qIXLk+9JagiWw79hh1OsSDOTAYAJMT+4iVAoGBAIWw\naorHd7IvZbPrRZqErMKzBJgWhGjpL5EJvCKm0ktGrrv4Vu4c1Z9kgjQ/8owVcOOj\n8wwpKaJIeJshFjGsVarIKhngfWucTqXkJIjrJFdC5TjDdYAwBbXVdLMqpPLOGwmS\nhxn+GL2GxBVK1479/J1CAWiMW1s5C/nLJOp6ff09AoGBAJduKIWFbyP0KkYxuk2o\nFiBk0P4pg9U43kTxhgxngPBZQmoIOdy7DunuKtEW4RR9HLmrBwjjdxa96s1Rq232\n5UK7iedEwLn44iUrXimGblaWum8rZH9RhbBoIwEywp6HaJn5VPQFQAx+7CgfClpG\nnIUxaYU+gfiDNdueEJkuG+bV\n-----END PRIVATE KEY-----\n",
+  "client_email": "ceratti2702@ceratti-python.iam.gserviceaccount.com",
+  "client_id": "109581458761164221461",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ceratti2702%40ceratti-python.iam.gserviceaccount.com"
+}

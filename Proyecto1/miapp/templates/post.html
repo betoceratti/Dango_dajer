@@ -1,0 +1,14 @@
+{% extends 'plantilla.htm' %}
+
+{% block head %}
+<li><a href="{% url 'articulos' %}">Social</a></li>
+{% endblock %}
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p }}
+    <button type="submit">Postear</button>
+</form>
+
+
+{% endblock %}

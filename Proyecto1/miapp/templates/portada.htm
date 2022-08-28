@@ -1,0 +1,53 @@
+{% extends 'plantilla.htm' %}
+
+
+{% block head %}
+{% load static %}
+
+
+<div class="logo">
+    <img src="{% static 'imagess/Logo_Dajer.jpg' %}" alt="">
+  
+</div>
+
+<nav class="nav">
+   
+    <ul>
+        <li>  <a href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span> </a>   
+        </li>
+        <li> <a href="{% url 'data' %}"><i class="fas fa-chart-line"></i><span>Kpis</span></a></li>
+        <li> <a href="{% url 'articulos' %}"><i class="fas fa-chart-line"></i><span>Social</span></a></li>
+        <!-- <li><a href="{% url 'lista' %}"><i class="fas fa-list-alt"></i><span>Vigentes</span></a> </li> -->
+        
+       
+
+    </ul>       
+    
+    <div class="close">
+        <li>  <a href="{% url 'salir' %}"><i class="fas fa-window-close"></i><span>Logout</span></a></li>
+        
+    </div>
+       
+    
+</nav>
+
+{% endblock%}
+
+{% block content %}
+
+<div class="portada">
+    <div class="textos">
+        <!-- <h4 class="mensaje_portada">{{mensaje}}</h4> -->
+        <p>Sesion :</p>
+        <p>{{user}}</p>
+        <img src="{{user.profile.img.url}}" class="user_portada">
+    </div>
+    <div class="textos" >
+        <img src="../static/imagess/about-1.png" alt="">
+    </div>
+
+</div>
+
+
+
+{% endblock %}

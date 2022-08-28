@@ -1,0 +1,43 @@
+{% extends 'plantilla.htm' %}
+
+
+{% block head %}
+
+<img src="{{user.profile.img.url}}" class="user_pic">
+<li><a href="{% url 'articulos' %}"><i class="fas fa-plus-square"></i><span>Blog</span></a> </li>
+
+
+<div class="close">
+    <li>  <a href="{% url 'salir' %}"><i class="fas fa-window-close"></i><span>Logout</span></a></li>
+    
+</div>
+{% endblock%}
+
+{% block content %}
+<section class="team">
+    <div class="cv ceo">
+        <img src=" {{perfiles.0.img.url}}" alt="">  
+        <h3> @{{perfiles.0.user}} </h3>    
+        <h4> {{perfiles.0.user.profile.position}}</h4> 
+       
+       
+    </div>
+{% for elemento in perfiles %}
+<div class="cv">
+    <img src="{{elemento.user.profile.img.url}}" alt="">
+    <h3> @{{elemento.user}}</h3>
+    <h4>{{elemento.user.profile.position}}</h4>
+    <h5>Id:{{elemento.user.profile.id}}</h5>
+    <!-- <h3>{{user.first_name}}</h3> -->
+   
+   
+</div>
+
+
+{% endfor%}
+
+</section>
+
+
+
+{% endblock%}

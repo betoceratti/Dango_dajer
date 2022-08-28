@@ -1,0 +1,54 @@
+{% extends 'plantilla.htm' %} 
+{% load static %}
+{% block head %}
+
+<div class="logo">
+    <img src="{% static 'imagess/Logo_Dajer.jpg' %}" alt="">
+   
+</div>
+
+<nav class="nav">
+    <ul>
+        <li>  <a href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span> </a>   
+        </li>
+        <li> <a href="{% url 'reportes' %}"><i class="fas fa-chart-line"></i><span>Edos Fin</span></a></li>
+        <li><a href="{% url 'lista' %}"><i class="fas fa-list-alt"></i><span>Vigentes</span></a> </li>
+        <li><a href="{% url 'alta' %}"><i class="fas fa-plus-square"></i><span>Alta_Casos</span></a> </li>
+       
+
+    </ul>                       
+    <div class="close">
+        <li>  <a href="{% url 'salir' %}"><i class="fas fa-window-close"></i><span>Logout</span></a></li>
+        
+    </div>
+    
+</nav>
+
+
+{% endblock %}
+
+<!-- CONTENT DONDE IRA EL TANBLERO -->
+
+ {% block content %}
+ 
+ <div class="dashboard">
+  
+ 
+     {% for r in resultado %}
+   
+     <div class="indicador">
+        <h3>{{r.0}}</h3>
+        <p>{{r.1}}</p>
+     </div>
+    
+
+    {% endfor %}
+  
+    
+</div>
+
+
+
+
+{% endblock %}
+

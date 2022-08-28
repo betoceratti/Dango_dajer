@@ -1,0 +1,31 @@
+{% extends 'plantilla.htm' %}
+<!-- {% load static %} -->
+{% block content %}
+
+{{formulario.errors}}
+
+
+<form action="" method="POST" class="form-registro">
+    {% csrf_token %}
+    
+        
+    {% for field in formulario %}
+        {{field.label}}
+        {{field}}
+    {% endfor %}
+
+   
+    <button type="submit" class="btn_enviar" value="Registrar">Registrar</button>
+
+    <div class="logo-form">
+        <img src="{% static 'imagess/LOGO PRODEMEX ZOOM.jpg' %}" alt="">
+    </div>
+    <div class="mensaje">
+        {{mensaje}}
+    </div>
+<a href="{% url 'acceso' %}">Login</a>
+</form>
+<!-- <img src="{% static 'imagess/LOGO.PNG' %}" alt=""> -->
+
+<!-- <h3>{{titulo}}</h3><span>{{mensaje}}</span>  -->
+{% endblock %}
